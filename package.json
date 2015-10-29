@@ -37,6 +37,7 @@
     ]
   },
   "dependencies": {
+    "bootstrap": "^3.3.5",
     "can": "^2.3.1",
     "can-connect": "^0.3.1",
     "can-ssr": "^0.10.1",
