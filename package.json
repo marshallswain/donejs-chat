@@ -34,7 +34,12 @@
       "donejs-deploy",
       "generator-donejs",
       "donejs-cli"
-    ]
+    ],
+    "envs": {
+      "server-production": {
+        "baseURL": "https://donejs-chatter.firebaseapp.com/"
+      }
+    }
   },
   "dependencies": {
     "bit-tabs": "^0.2.0",
@@ -59,5 +64,26 @@
     "steal-qunit": "^0.1.1",
     "steal-tools": "^0.12.1",
     "testee": "^0.2.2"
+  },
+  "donejs": {
+    "deploy": {
+      "root": "dist",
+      "services": {
+        "production": {
+          "type": "firebase",
+          "config": {
+            "firebase": "donejs-chatter",
+            "public": "./dist",
+            "headers": [{
+              "source": "/**",
+              "headers": [{
+                "key": "Access-Control-Allow-Origin",
+                "value": "*"
+              }]
+            }]
+          }
+        }
+      }
+    }
   }
 }
