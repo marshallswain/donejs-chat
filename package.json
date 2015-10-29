@@ -47,7 +47,8 @@
     "done-css": "^1.1.15",
     "generator-donejs": "^0.3.4",
     "jquery": "^2.1.4",
-    "steal": "^0.12.3"
+    "steal": "^0.12.3",
+    "steal-socket.io": "^1.0.0"
   },
   "devDependencies": {
     "can-fixture": "0.0.1",
