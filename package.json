@@ -61,6 +61,7 @@
     "donejs-cli": "^0.5.4",
     "donejs-deploy": "^0.3.1",
     "funcunit": "^3.0.0",
+    "steal-cordova": "^0.1.1",
     "steal-qunit": "^0.1.1",
     "steal-tools": "^0.12.1",
     "testee": "^0.2.2"
@@ -74,13 +75,17 @@
           "config": {
             "firebase": "donejs-chatter",
             "public": "./dist",
-            "headers": [{
-              "source": "/**",
-              "headers": [{
-                "key": "Access-Control-Allow-Origin",
-                "value": "*"
-              }]
-            }]
+            "headers": [
+              {
+                "source": "/**",
+                "headers": [
+                  {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                  }
+                ]
+              }
+            ]
           }
         }
       }

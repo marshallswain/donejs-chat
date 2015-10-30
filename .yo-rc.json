@@ -2,5 +2,12 @@
   "generator-donejs": {
     "folder": "src",
     "name": "donejs-chat"
+  },
+  "donejs-cordova": {
+    "name": "donejs chat",
+    "id": "com.donejs.donejschat",
+    "platforms": [
+      "ios"
+    ]
   }
 }
