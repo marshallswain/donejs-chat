@@ -51,7 +51,8 @@
     "done-component": "^0.3.0",
     "done-css": "^1.1.15",
     "generator-donejs": "^0.3.4",
-    "jquery": "^2.1.4",
+    "jquery": "^1.11.0",
+    "jquery-transport-xdr": "^1.0.9",
     "steal": "^0.12.3",
     "steal-socket.io": "^1.0.0"
   },

@@ -3,6 +3,8 @@ import superMap from 'can-connect/can/super-map/';
 import tag from 'can-connect/can/tag/';
 import 'can/map/define/define';
 import io from 'steal-socket.io';
+import 'jquery-transport-xdr';
+import 'donejs-chat/prefilter';
 
 export const Message = can.Map.extend({
   define: {}
@@ -25,10 +27,10 @@ tag('message-model', messageConnection);
 const socket = io('http://chat.donejs.com');
 
 socket.on('messages created',
-  message => messageConnection.createInstance(message));
+  order => messageConnection.createInstance(order));
 socket.on('messages updated',
-  message => messageConnection.updateInstance(message));
+  order => messageConnection.updateInstance(order));
 socket.on('messages removed',
-  message => messageConnection.destroyInstance(message));
+  order => messageConnection.destroyInstance(order));
 
 export default Message;
