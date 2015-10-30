@@ -1,0 +1,100 @@
+{
+  "name": "donejs-chat",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "scripts": {
+    "test": "testee src/test.html --browsers firefox --reporter Spec",
+    "start": "can-serve --port 8080",
+    "develop": "can-serve --develop --port 8080",
+    "document": "documentjs",
+    "build": "node build"
+  },
+  "main": "production.html",
+  "files": [
+    "src"
+  ],
+  "keywords": [],
+  "system": {
+    "main": "donejs-chat/index.stache!done-autorender",
+    "directories": {
+      "lib": "src"
+    },
+    "configDependencies": [
+      "live-reload"
+    ],
+    "npmIgnore": [
+      "documentjs",
+      "testee",
+      "donejs-deploy",
+      "generator-donejs",
+      "donejs-cli"
+    ],
+    "envs": {
+      "server-production": {
+        "baseURL": "https://donejs-chatter.firebaseapp.com/"
+      }
+    }
+  },
+  "dependencies": {
+    "bit-tabs": "^0.2.0",
+    "bootstrap": "^3.3.5",
+    "can": "^2.3.1",
+    "can-connect": "^0.3.1",
+    "can-ssr": "^0.10.1",
+    "done-autorender": "^0.4.3",
+    "done-component": "^0.3.0",
+    "done-css": "^1.1.15",
+    "generator-donejs": "^0.3.4",
+    "jquery": "^2.1.4",
+    "steal": "^0.12.3",
+    "steal-socket.io": "^1.0.0"
+  },
+  "devDependencies": {
+    "can-fixture": "0.0.1",
+    "documentjs": "^0.3.3",
+    "donejs-cli": "^0.5.4",
+    "donejs-deploy": "^0.3.1",
+    "funcunit": "^3.0.0",
+    "steal-cordova": "^0.1.1",
+    "steal-nw": "^0.1.4",
+    "steal-qunit": "^0.1.1",
+    "steal-tools": "^0.12.1",
+    "testee": "^0.2.2"
+  },
+  "donejs": {
+    "deploy": {
+      "root": "dist",
+      "services": {
+        "production": {
+          "type": "firebase",
+          "config": {
+            "firebase": "donejs-chatter",
+            "public": "./dist",
+            "headers": [
+              {
+                "source": "/**",
+                "headers": [
+                  {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "window": {
+    "width": 1000,
+    "height": 600,
+    "toolbar": false
+  }
+}
